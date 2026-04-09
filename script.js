@@ -86,4 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Also observe cert cards for scroll animation
+    const certCards = document.querySelectorAll('.cert-card');
+    certCards.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.6s ease-out ${i * 0.1}s, transform 0.6s ease-out ${i * 0.1}s`;
+        observer.observe(el);
+    });
 });
