@@ -696,71 +696,530 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ===== Responsive - Tablet ===== */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .hero-image-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-image {
+        margin-right: 0;
+    }
+
     .about-container {
         grid-template-columns: 1fr;
     }
-    
+
+    .section-title::after {
+        width: 200px;
+    }
+
+    .section-title.center::before {
+        width: 120px;
+    }
+
+    .project-card {
+        padding: 30px;
+    }
+}
+
+/* ===== Responsive - Mobile ===== */
+@media (max-width: 768px) {
+    /* --- Global --- */
+    .section {
+        padding: 40px 0;
+        width: 88%;
+    }
+
+    .section-title {
+        font-size: clamp(22px, 5vw, 28px);
+        margin-bottom: 30px;
+    }
+
     .section-title::after {
         width: 100%;
     }
-    
+
+    .section-title.center::before {
+        width: 60px;
+    }
+
+    .section-title.center::after {
+        width: 60px;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
     .nav-links {
         position: fixed;
         right: -100%;
         top: 0;
         flex-direction: column;
         background-color: var(--bg-light);
-        width: 60%;
+        width: 70%;
         height: 100vh;
         justify-content: center;
         align-items: center;
         transition: right 0.3s ease-in-out;
-        box-shadow: -10px 0 30px -15px rgba(2,12,27,0.7);
+        box-shadow: -10px 0 30px -15px rgba(2, 12, 27, 0.7);
+        gap: 0;
+        padding: 0;
+        z-index: 100;
     }
-    
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
     .nav-links.nav-active {
         right: 0;
     }
-    
+
     .menu-toggle {
         display: flex;
         z-index: 101;
     }
-    
+
     /* Hamburger animation */
     .menu-toggle.toggle span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
         transition: all 0.3s ease;
     }
+
     .menu-toggle.toggle span:nth-child(2) {
         opacity: 0;
         transition: all 0.3s ease;
     }
+
     .menu-toggle.toggle span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
         transition: all 0.3s ease;
     }
 
-    .hero-cta {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .hero-cta .btn {
-        text-align: center;
+    /* --- Hero Section --- */
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        margin-top: 0;
     }
 
     .hero-wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
-        gap: 40px;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-image {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .hero-image-wrapper {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         margin: 0 auto;
+    }
+
+    .name {
+        font-size: clamp(32px, 10vw, 50px);
+        word-break: break-word;
+    }
+
+    .role {
+        font-size: clamp(20px, 6vw, 36px);
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .greeting {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .summary {
+        font-size: 16px;
+        max-width: 100%;
+        margin-top: 16px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 30px;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .hero-cta .btn {
+        text-align: center;
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+
+    /* --- About Section --- */
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-details h3 {
+        font-size: 18px;
+    }
+
+    .timeline h4 {
+        font-size: 15px;
+    }
+
+    .bullet-list li {
+        font-size: 14px;
+    }
+
+    /* --- Skills Section --- */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skill-category {
+        padding: 24px 20px;
+    }
+
+    .skill-category h3 {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .skill-list li {
+        font-size: 14px;
+    }
+
+    /* --- Certifications Section --- */
+    .cert-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cert-card {
+        padding: 22px 18px;
+    }
+
+    .cert-title {
+        font-size: 15px;
+    }
+
+    .cert-issuer {
+        font-size: 12px;
+    }
+
+    .cert-tags {
+        gap: 6px;
+    }
+
+    .cert-tags li {
+        font-size: 10px;
+        padding: 2px 8px;
+    }
+
+    .cert-actions {
+        margin-top: 28px;
+    }
+
+    .cert-actions .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    /* --- Projects Section --- */
+    .project-list {
+        margin-top: 30px;
+        gap: 40px;
+    }
+
+    .project-card {
+        display: block;
+        padding: 24px 20px;
+    }
+
+    .project-content {
+        width: 100%;
+    }
+
+    .project-title {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .project-overline {
+        font-size: 12px;
+    }
+
+    .project-description {
+        padding: 18px 16px;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .project-tech-list {
+        gap: 10px;
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    /* --- Contact Section --- */
+    .contact {
+        max-width: 100%;
+        padding: 40px 0;
+    }
+
+    .contact-title {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .contact p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 13px;
+    }
+
+    .contact-info {
+        margin-top: 24px;
+        gap: 20px;
+    }
+
+    .email-link, .phone-link {
+        font-size: 14px;
+        word-break: break-all;
+    }
+
+    /* --- Footer --- */
+    footer {
+        padding: 24px 0;
+    }
+
+    footer p {
+        font-size: 11px;
+    }
+
+    /* --- Buttons --- */
+    .btn {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+}
+
+/* ===== Responsive - Small Mobile ===== */
+@media (max-width: 480px) {
+    .section {
+        width: 92%;
+    }
+
+    .navbar {
+        padding: 0 16px;
+    }
+
+    .hero-image-wrapper {
+        width: 170px;
+        height: 170px;
+    }
+
+    .name {
+        font-size: clamp(28px, 9vw, 40px);
+    }
+
+    .role {
+        font-size: clamp(18px, 5.5vw, 28px);
+    }
+
+    .summary {
+        font-size: 14px;
+    }
+
+    .hero-cta .btn {
+        max-width: 240px;
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .skills-grid {
+        gap: 14px;
+    }
+
+    .skill-category {
+        padding: 20px 16px;
+    }
+
+    .project-card {
+        padding: 20px 16px;
+    }
+
+    .project-description {
+        padding: 14px 12px;
+        font-size: 13px;
+    }
+
+    .cert-card {
+        padding: 18px 14px;
+    }
+
+    .contact-title {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    /* Projects.html - Table to Cards on mobile */
+    .archive-table-container table thead {
+        display: none;
+    }
+
+    .archive-table-container table,
+    .archive-table-container table tbody,
+    .archive-table-container table tr,
+    .archive-table-container table td {
+        display: block;
+        width: 100%;
+    }
+
+    .archive-table-container table tr {
+        background-color: var(--bg-light);
+        border-radius: 8px;
+        padding: 20px 16px;
+        margin-bottom: 16px;
+        border: 1px solid var(--bg-lighter);
+    }
+
+    .archive-table-container table td {
+        border-bottom: none;
+        padding: 4px 0;
+    }
+
+    .archive-table-container table td.year {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .archive-table-container table td.project-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .archive-table-container table td.description-cell {
+        font-size: 13px;
+        max-width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .archive-table-container table td.tech-cell {
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: var(--accent);
+        opacity: 0.8;
+    }
+
+    .archive-table-container table td.link-cell {
+        display: flex;
+        gap: 12px;
+    }
+}
+
+/* ===== Responsive - Projects Table for Tablet/Mobile ===== */
+@media (max-width: 768px) {
+    .archive-table-container table thead {
+        display: none;
+    }
+
+    .archive-table-container table,
+    .archive-table-container table tbody,
+    .archive-table-container table tr,
+    .archive-table-container table td {
+        display: block;
+        width: 100%;
+    }
+
+    .archive-table-container table tr {
+        background-color: var(--bg-light);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 16px;
+        border: 1px solid var(--bg-lighter);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .archive-table-container table tr:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px -15px var(--accent-glow);
+    }
+
+    .archive-table-container table tr:hover td {
+        background-color: transparent;
+    }
+
+    .archive-table-container table td {
+        border-bottom: none;
+        padding: 4px 0;
+    }
+
+    .archive-table-container table td.year {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .archive-table-container table td.project-title {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .archive-table-container table td.description-cell {
+        font-size: 14px;
+        max-width: 100%;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .archive-table-container table td.tech-cell {
+        font-size: 12px;
+        margin-bottom: 12px;
+        color: var(--accent);
+        opacity: 0.8;
+    }
+
+    .archive-table-container table td.link-cell {
+        display: flex;
+        gap: 14px;
+        padding-top: 4px;
     }
 }
